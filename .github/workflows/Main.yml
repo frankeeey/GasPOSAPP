@@ -1,0 +1,47 @@
+name: CI
+
+on: 
+  push:
+    branches:
+    - main
+jobs:
+  sast_scan:
+    name: Run Snyc
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: set up Python
+      uses: actions/setup-python@v2
+      with:
+        Python-version: 3.8
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install Snyk
+      run: npm install -g snyk
+
+    - name: Run Snyk to Check for Vulnerabilities
+      env:
+        SNYK_TOKEN: 
+      
+      
+    
+       
+    
+    
+    
+    
+    
+
+     
+        
+        
+     
+      
+     
